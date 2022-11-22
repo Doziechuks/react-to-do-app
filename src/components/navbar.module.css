@@ -15,14 +15,25 @@
   justify-content: space-between;
 }
 .links a{
+  border: 1px red solid;
   color: #ffff;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
 }
 
-.links a:hover{
-  border: 2px dotted #ffff;
-  padding: 0.2em;
+.underline{
+  border: 1px #fff solid;
+  width: 100%;
+  background-color: #ffff;
+  transform: translateX(-100%);
+   transition: all 1s ease-in-out;
+}
+.links a:hover .underline{
+transform: translateX(0);
+}
+.active{
+  transform: translateX(0);
 }

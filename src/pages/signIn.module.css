@@ -1,0 +1,30 @@
+.wrapper{
+  border: 1px red solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7.5em;
+}
+.title{
+  text-transform: capitalize;
+  margin-bottom: 2em;
+}
+.formWrapper{
+  border: 1px red solid;
+  width: 100%;
+  max-width: 40em;
+}
+.btnWrapper{
+  border: 1px red solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btnWrapper h3{
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}

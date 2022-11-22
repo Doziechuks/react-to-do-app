@@ -1,0 +1,27 @@
+.CustomButton{
+  width: 100%;
+  padding: 0.5em;
+  background-color: transparent;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  background-color: black;
+  color: #fff;
+  border-radius: 0.2em;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.CustomButton:hover{
+  color: black;
+  background-color: #fff;
+  border: 1px black solid;
+}
+.googlSignIn{
+  background-color: #3065FB;
+  color: #fff;
+}
+.googlSignIn:hover{
+  background-color: #0647fa;
+  color: #fff;
+}
