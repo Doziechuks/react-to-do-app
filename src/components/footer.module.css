@@ -1,0 +1,16 @@
+.wrapper{
+  border: 1px red solid;
+  width: 100%;
+  background-color: #3065FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8em;
+}
+.wrapper p{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0.1em;
+}
