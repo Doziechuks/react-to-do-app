@@ -1,6 +1,7 @@
 import classes from './signIn.module.css';
 import InputForm from '../components/inputForm';
 import CustomButton from '../components/customButton';
+import { GoogleSignIn } from '../firebase/firebase';
 import { useState } from 'react';
 
 const SignInPage = () => {
@@ -25,7 +26,7 @@ const SignInPage = () => {
         <div className={classes.btnWrapper}>
           <CustomButton>sign in</CustomButton>
           <h3>or</h3>
-          <CustomButton isGoogleSignIn>sign in with google</CustomButton>
+          <CustomButton onClick={GoogleSignIn} isGoogleSignIn>sign in with google</CustomButton>
         </div>
       </form>
     </div>
