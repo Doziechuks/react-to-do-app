@@ -18,11 +18,8 @@
 body{
   border: 1px red solid;
   font-family: 'Poppins', sans-serif;
+  width: 100%;
   /* font-family: 'Roboto', sans-serif; */
   /* color: #3065FB; */
   /* color: #3065FB; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

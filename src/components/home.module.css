@@ -1,0 +1,178 @@
+.wrapper{
+  border: 1px red solid;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+.content{
+  border: 1px red solid;
+  width: 100%;
+  max-width: 42em;
+}
+.content h1{
+  border: 1px red solid;
+  width: 100%;
+  text-transform: capitalize;
+  font-size: 3.5rem;
+  font-family: 'Roboto', sans-serif;
+  color: #3065FB;
+  font-weight: bolder;
+  margin-bottom: 0.5em;
+}
+.textAnimation{
+  border: 1px red solid;
+  width: 100%;
+  height: 8em;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.lines{
+  font-weight: bolder;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+.linesBox{
+  width: 100%;
+}
+.linesBox:first-child{
+  animation: anim 15s  ease-out infinite 2s;
+}
+@keyframes anim {
+  0%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: -120px;
+  }
+  50%{
+    margin-top: -240px;
+  }
+  75%{
+    margin-top: -120px;
+  }
+   100%{
+    margin-top: 0px;
+  }
+}
+.btn{
+  width: 100%;
+  max-width: 8em;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  background-color: #3065FB;
+  color: #fff;
+  padding: 0.3em;
+  font-weight: bold;
+  border-radius: 0.3em;
+   letter-spacing: 0.1em;
+   transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+  background-color: #0647fa;
+}
+.clock{
+  width: 100%;
+  max-width: 42em;
+  border: 1px red solid;
+}
+
+@media screen and (max-width:1200px) {
+  .wrapper{
+    padding: 0 1em;
+  }
+  .content{
+  max-width: 30em;
+}
+.content h1{
+  font-size: 2.5rem;
+}
+.textAnimation{
+  height: 6em;
+}
+.lines{
+  font-size: 2rem;
+}
+@keyframes anim {
+  0%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: -95px;
+  }
+  50%{
+    margin-top: -190px;
+  }
+  75%{
+    margin-top: -95px;
+  }
+   100%{
+    margin-top: 0px;
+  }
+}
+.clock{
+  max-width: 30em;
+}
+}
+
+@media screen and (max-width:1000px) {
+  .wrapper{
+    flex-direction: column;
+    padding: 0 2em;
+    gap: 0;
+  }
+  .content{
+  max-width: 100%;
+  margin-bottom: 3em;
+}
+.content h1{
+  text-align: center;
+  font-size: 3.5rem;
+}
+.btn{
+  margin: 0 auto;
+}
+.clock{
+  max-width: 100%;
+}
+}
+
+@media screen and (max-width:500px) {
+  .wrapper{
+    padding: 0 1em;
+  }
+  .content h1{
+    font-size: 2.6rem;
+    text-align: center;
+  }
+  .textAnimation{
+    height: 5em;
+  }
+  .lines{
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.linesBox:first-child{
+  animation: anim 10s  ease-out infinite 2s;
+}
+@keyframes anim {
+  0%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: -70px;
+  }
+  50%{
+    margin-top: -145px;
+  }
+  75%{
+    margin-top: -70px;
+  }
+   100%{
+    margin-top: 0px;
+  }
+}
+}
