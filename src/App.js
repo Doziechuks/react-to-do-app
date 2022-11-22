@@ -6,8 +6,12 @@ import Footer from './components/footer';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+import { selectCurrentUser } from './redux/userSelector';
+import { connect } from 'react-redux';
+import { userAction } from './redux/userAction';
+import { createStructuredSelector } from 'reselect';
 
-function App() {
+function App({currentUser, setCurrentUser}) {
   return (
     <div className={classes.app}>
       <NavBar />
@@ -20,4 +24,10 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(userAction(user))
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);
