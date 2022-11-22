@@ -1,11 +1,11 @@
-.wrapper{
+.wrapper {
   border: 1px red solid;
   width: 100%;
-  background-color: #3065FB;
+  background-color: #3065fb;
   padding: 1em 2em;
   margin-bottom: 3em;
 }
-.links{
+.links {
   border: 1px red solid;
   width: 100%;
   max-width: 15em;
@@ -13,8 +13,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.5s ease-in-out;
 }
-.links a{
+.add {
+  max-width: 26em;
+  transition: all 0.5s ease-in-out;
+}
+.links a {
   border: 1px red solid;
   color: #ffff;
   font-size: 1.2rem;
@@ -23,17 +28,35 @@
   transition: all 1s ease-in-out;
   overflow: hidden;
 }
-
-.underline{
+.signout {
+  border: 1px red solid;
+  color: #ffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+.underline {
   border: 1px #fff solid;
   width: 100%;
   background-color: #ffff;
   transform: translateX(-100%);
-   transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
-.links a:hover .underline{
-transform: translateX(0);
-}
-.active{
+.links a:hover .underline {
   transform: translateX(0);
+}
+.active {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 500px) {
+  .links a {
+    font-size: 1rem;
+  }
+  .signout {
+    font-size: 1rem;
+  }
 }

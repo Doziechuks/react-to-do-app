@@ -11,7 +11,23 @@ import { connect } from 'react-redux';
 import { userAction } from './redux/userAction';
 import { createStructuredSelector } from 'reselect';
 
+import { manageUsers,auth, db } from './firebase/firebase';
+import { onAuthStateChanged } from "firebase/auth";
+import { onSnapshot } from 'firebase/firestore';
+
+import { useEffect } from 'react';
+
 function App({currentUser, setCurrentUser}) {
+  useEffect(()=>{
+    onAuthStateChanged(auth, async (userAuth)=> {
+      if(userAuth){
+        const useref = await manageUsers(userAuth);
+        onSnapshot(useref, (getSnapShot) => {
+          setCurrentUser({id: getSnapShot.id, ...getSnapShot.data()})
+        })
+      }
+    })
+  },[])
   return (
     <div className={classes.app}>
       <NavBar />
