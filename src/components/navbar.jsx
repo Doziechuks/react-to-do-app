@@ -10,7 +10,6 @@ import { signOutUser } from '../firebase/firebase';
 const NavBar = ({currentUser}) => {
   const [path, setPath] = useState('');
   const { pathname } = useLocation();
-  console.log(currentUser)
 
   useEffect(() => {
     setPath(pathname);
