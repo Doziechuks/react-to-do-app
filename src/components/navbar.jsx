@@ -10,6 +10,7 @@ import { signOutUser } from '../firebase/firebase';
 const NavBar = ({currentUser}) => {
   const [path, setPath] = useState('');
   const { pathname } = useLocation();
+  console.log(currentUser)
 
   useEffect(() => {
     setPath(pathname);
@@ -17,14 +18,18 @@ const NavBar = ({currentUser}) => {
   return (
     <div className={classes.wrapper}>
       <div className={`${classes.links} ${currentUser && classes.add}`}>
-        <Link to="/signin">
-          {currentUser ? <p>hi, {currentUser.displayName}</p> : "sign in"}
+        <div className={classes.signout}>
+          {currentUser ? (
+            <p>hi, {currentUser.displayName}</p>
+          ) : (
+            <Link to="/signin">sign in</Link>
+          )}
           <div
             className={` ${classes.underline} ${
               path.includes("/signin") ? classes.active : ""
             }`}
           />
-        </Link>
+        </div>
         <div className={classes.signout}>
           {currentUser ? <div onClick={signOutUser}>sign out</div> : null}
         </div>
