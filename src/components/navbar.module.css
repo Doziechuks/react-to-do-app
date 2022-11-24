@@ -42,7 +42,7 @@
   border: 1px #fff solid;
   width: 100%;
   background-color: #ffff;
-  transform: translateX(-100%);
+  transform: translateX(-105%);
   transition: all 1s ease-in-out;
 }
 .links a:hover .underline {

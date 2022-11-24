@@ -10,6 +10,7 @@
 .title{
   text-transform: capitalize;
   margin-bottom: 1em;
+  font-family: 'Roboto', sans-serif;
 }
 .error{
   border: 1px solid red;

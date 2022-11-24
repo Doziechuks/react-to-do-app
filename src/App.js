@@ -3,6 +3,7 @@ import NavBar from './components/navbar';
 import HomePage from './pages/HomePage';
 import SignInPage from './pages/signInPage';
 import SignUpPage from './pages/signUpPage';
+import TodoList from './pages/todoPage';
 import Footer from './components/footer';
 
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -12,7 +13,7 @@ import { connect } from 'react-redux';
 import { userAction } from './redux/userAction';
 import { createStructuredSelector } from 'reselect';
 
-import { manageUsers,auth, db } from './firebase/firebase';
+import { manageUsers,auth } from './firebase/firebase';
 import { onAuthStateChanged } from "firebase/auth";
 import { onSnapshot } from 'firebase/firestore';
 
@@ -35,9 +36,34 @@ function App({currentUser, setCurrentUser}) {
     <div className={classes.app}>
       <NavBar />
       <Switch>
-        <Route exact path = '/' component={HomePage} />
-        <Route exact path = '/signin' component={SignInPage} />
-        <Route exact path = '/signup' component={SignUpPage} />
+        <Route
+          exact
+          path="/"
+          render={() =>
+            currentUser ? <Redirect to="/todolist" /> : <HomePage />
+          }
+        />
+        <Route
+          exact
+          path="/todolist"
+          render={() =>
+            currentUser === null ? <Redirect to="/" /> : <TodoList />
+          }
+        />
+        <Route
+          exact
+          path="/signin"
+          render={() =>
+            currentUser ? <Redirect to="/todolist" /> : <SignInPage />
+          }
+        />
+        <Route
+          exact
+          path="/signup"
+          render={() =>
+            currentUser ? <Redirect to="/todolist" /> : <SignUpPage />
+          }
+        />
       </Switch>
       <Footer />
     </div>

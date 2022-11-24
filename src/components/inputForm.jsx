@@ -1,8 +1,8 @@
 import classes from './InputForm.module.css';
 
-const InputForm = ({ handleChange, ...otherProps }) => {
+const InputForm = ({ handleChange,isTodo, ...otherProps }) => {
   return ( 
-    <input className={classes.input} onChange={handleChange} {...otherProps} />
+    <input className={`${classes.input} ${isTodo ? classes.todo : ''}`} onChange={handleChange} {...otherProps} />
    );
 }
  

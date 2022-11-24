@@ -12,3 +12,9 @@
 .input::placeholder{
   font-size: 1rem;
 }
+.todo{
+  border: 1px black solid;
+  border-radius: 0.2em;
+  margin-bottom: 0;
+  height: 100%;
+}
