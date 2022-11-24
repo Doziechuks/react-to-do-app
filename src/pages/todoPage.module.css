@@ -18,6 +18,7 @@
   margin-bottom: 1em;
 }
 .todoWrapper{
+  border: 1px red solid;
   width: 100%;
   max-width: 35em;
   border-radius: 0.3em;
@@ -32,6 +33,12 @@
   font-family: 'Roboto', sans-serif;
   margin-bottom: 0.4em;
 }
+.error{
+  color: red;
+  text-transform: capitalize;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
 .form{
   border: 1px red solid;
   width: 100%;
@@ -44,8 +51,18 @@
 }
 .todolist{
   width: 100%;
-  padding: 0.5em;
-  background-color: rgb(227, 224, 224);
+  border: 1px red solid;
+}
+.length{
+  width: 100%;
+  text-transform: capitalize;
+  color: red;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+.blue{
+  color: blue;
 }
 
 @media screen and (max-width:550px) {
