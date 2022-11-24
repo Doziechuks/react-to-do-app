@@ -3,7 +3,7 @@ import InputForm from "../components/inputForm";
 import CustomButton from "../components/customButton";
 import { auth, GoogleSignIn, manageUsers } from "../firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
@@ -33,6 +33,15 @@ const SignUpPage = () => {
       console.log(error.message)
     }
   };
+
+  useEffect(() => {
+    let timerId = setInterval(() => {
+      setError("");
+    }, 3000);
+
+    return () => clearTimeout(timerId);
+  }, []);
+
   const handleName = (e) => {
     setDisplayName(e.target.value);
   };

@@ -29,7 +29,14 @@ const TodoList = (currentUser) => {
   const handleInput = (e) => {
     setInput(e.target.value);
   };
+  useEffect(() => {
+    let timerId = setInterval(()=>{
+      setError('');
+    }, 3000)
 
+    return () => clearTimeout(timerId);
+  },[])
+  
   //create
   const createTodo = async (e) => {
     e.preventDefault();

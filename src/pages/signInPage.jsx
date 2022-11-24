@@ -3,7 +3,7 @@ import InputForm from '../components/inputForm';
 import CustomButton from '../components/customButton';
 import { GoogleSignIn, auth } from '../firebase/firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignInPage = () => {
@@ -31,6 +31,15 @@ const SignInPage = () => {
       console.log(error.message);
     }
   }
+
+  useEffect(() => {
+    let timerId = setInterval(() => {
+      setError("");
+    }, 3000);
+
+    return () => clearTimeout(timerId);
+  }, []);
+  
   const handleEmail = (e) => {
     setEmail(e.target.value)
   }
