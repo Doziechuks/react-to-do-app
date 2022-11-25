@@ -24,13 +24,23 @@ const NavBar = ({currentUser}) => {
           </div>
         </div>
       ) : (
-        <div className={classes.signin}>
-          <Link to="/signin">sign in</Link>
-          <div
-            className={` ${classes.underline} ${
-              path.includes("/signin") ? classes.active : ""
-            }`}
-          />
+        <div className={classes.linkbox}>
+          <div className={classes.signin}>
+            <Link to="/">home</Link>
+            <div
+              className={` ${classes.underline} ${
+                path === '/' ? classes.active : ""
+              }`}
+            />
+          </div>
+          <div className={classes.signin}>
+            <Link to="/signin">sign in</Link>
+            <div
+              className={` ${classes.underline} ${
+                path.includes("/signin") ? classes.active : ""
+              }`}
+            />
+          </div>
         </div>
       )}
     </div>
