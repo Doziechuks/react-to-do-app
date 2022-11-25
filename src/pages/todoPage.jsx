@@ -90,7 +90,7 @@ const TodoList = (currentUser) => {
 
   return (
     <div className={classes.wrapper}>
-      <h1 className={classes.heading}>welcome, start creating your todo </h1>
+      <h1 className={classes.heading}>welcome! start creating your todo </h1>
       <div className={classes.todoWrapper}>
         <h1 className={classes.title}>add todo</h1>
         {error ? <p className={classes.error}>{error}</p> : ""}
