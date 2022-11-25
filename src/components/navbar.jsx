@@ -16,23 +16,23 @@ const NavBar = ({currentUser}) => {
   }, [pathname])
   return (
     <div className={classes.wrapper}>
-      <div className={`${classes.links} ${currentUser && classes.add}`}>
-        <div className={classes.signout}>
-          {currentUser ? (
-            <p>hi, {currentUser.displayName}</p>
-          ) : (
-            <Link to="/signin">sign in</Link>
-          )}
+      {currentUser ? (
+        <div className={classes.usercontainer}>
+          <div className={classes.user}>hi, {currentUser.displayName}</div>
+          <div className={classes.signout} onClick={signOutUser}>
+            sign out
+          </div>
+        </div>
+      ) : (
+        <div className={classes.signin}>
+          <Link to="/signin">sign in</Link>
           <div
             className={` ${classes.underline} ${
               path.includes("/signin") ? classes.active : ""
             }`}
           />
         </div>
-        <div className={classes.signout}>
-          {currentUser ? <div onClick={signOutUser}>sign out</div> : null}
-        </div>
-      </div>
+      )}
     </div>
   );
 }
