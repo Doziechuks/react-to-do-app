@@ -25,7 +25,7 @@ function App({currentUser, setCurrentUser}) {
      if (currentUser) {
        const userRef = await manageUsers(currentUser);
        onSnapshot(userRef, (getSnapShot) => {
-         setCurrentUser({ id: getSnapShot.Id, ...getSnapShot.data() });
+         setCurrentUser({ id: getSnapShot.id, ...getSnapShot.data() });
        });
      }
    });

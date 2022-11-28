@@ -10,7 +10,7 @@ import {
   collection,
   updateDoc,
   doc,
-  addDoc,
+  setDoc,
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebase/firebase";
@@ -21,7 +21,8 @@ import { createStructuredSelector } from "reselect";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const TodoList = (currentUser) => {
+const TodoList = ({currentUser}) => {
+
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [error, setError] = useState('');
@@ -29,35 +30,39 @@ const TodoList = (currentUser) => {
   const handleInput = (e) => {
     setInput(e.target.value);
   };
+
   useEffect(() => {
     let timerId = setInterval(()=>{
       setError('');
     }, 3000)
-
     return () => clearTimeout(timerId);
   },[])
   
   //create
-  const createTodo = async (e) => {
+  const createTodo = async ({ e, currentUser }) => {
     e.preventDefault();
+    const todoId =  Date.now();
+    console.log({id:currentUser.id, todoId});
+  
     if(input === '' || input.trim() === ''){
       setError('input cannot be empty');
       return;
     }
     try {
-      await addDoc(collection(db, 'todos'), {
+      await setDoc(doc(db, 'users', currentUser.id, 'todos', todoId.toString()), {
         Todo: input,
-        completed: false
+        completed: false,
+        id: todoId
       })
       setInput('');
     } catch (error) {
-      setError('unkwown error please try again')
+      setError('unkwown error please try again');
     }
   };
 
   //read
   useEffect(() => {
-    const queryDoc = query(collection(db, 'todos'));
+    const queryDoc = query(collection(db, "users", currentUser.id, "todos"));
     const getSnapShot = onSnapshot(queryDoc, (querySnapShot) => {
       let todosArray = [];
       querySnapShot.forEach((doc) => {
@@ -71,9 +76,9 @@ const TodoList = (currentUser) => {
   //update
   const UpdateTodo = async (todo) => {
     try {
-      await updateDoc(doc(db, 'todos', todo.id), {
-        completed: !todo.completed   
-      })
+      await updateDoc(doc(db, "users", currentUser.id, "todos", todo.id), {
+        completed: !todo.completed,
+      });
     } catch (error) {
       setError('please try again')
     }
@@ -82,7 +87,7 @@ const TodoList = (currentUser) => {
   //delete
   const deleteTodo = async (id) => {
     try {
-      await deleteDoc(doc(db, 'todos', id))
+      await deleteDoc(doc(db, "users", currentUser.id, "todos", id));
     } catch (error) {
       setError('please try again')
     }
@@ -94,7 +99,7 @@ const TodoList = (currentUser) => {
       <div className={classes.todoWrapper}>
         <h1 className={classes.title}>add todo</h1>
         {error ? <p className={classes.error}>{error}</p> : ""}
-        <form className={classes.form} onSubmit={createTodo}>
+        <form className={classes.form} onSubmit={ (e) => createTodo({e, currentUser}) }>
           <InputForm
             isTodo
             placeholder="Add Todo"
