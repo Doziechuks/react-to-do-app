@@ -1,5 +1,5 @@
-.wrapper{
-  width: 100%;
+.wrapper {
+  width: 98%;
   padding: 0.5em;
   background-color: rgb(227, 224, 224);
   border-radius: 0.2em;
@@ -8,30 +8,36 @@
   align-items: center;
   justify-content: space-between;
 }
-.completed{
+.completed {
   text-decoration: line-through;
   color: blue;
 }
-.todo{
+.todo {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.todo input{
+.todo input {
   margin-right: 0.5em;
   cursor: pointer;
 }
-.todo p{
+.todo p {
   font-weight: bold;
   text-transform: capitalize;
   cursor: pointer;
 }
-.btn{
+.btn {
   background-color: transparent;
   border: none;
   outline: none;
   margin-left: 0.5em;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    width: 95%;
+  }
 }

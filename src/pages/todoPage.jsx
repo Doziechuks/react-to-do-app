@@ -111,7 +111,7 @@ const TodoList = ({currentUser}) => {
             <AiOutlinePlus className={classes.icon} />
           </CustomButton>
         </form>
-        <ul className={classes.todolist}>
+        <ul className={`${classes.todolist} ${todos.length && classes.todoHeight}`}>
           {todos.map((todo, index) => {
             return (
               <Todos

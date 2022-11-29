@@ -4,8 +4,6 @@
   align-items: center;
   justify-content: center;
   gap: 4em;
-  /* margin-bottom: 2.5em; */
-  border: 1px red solid;
 }
 .content{
   width: 100%;

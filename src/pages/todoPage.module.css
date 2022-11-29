@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
   width: 100%;
   margin-bottom: 3em;
   min-height: 65vh;
@@ -7,35 +7,35 @@
   align-items: center;
   justify-content: flex-start;
 }
-.heading{
+.heading {
   width: 100%;
   text-transform: capitalize;
   text-align: center;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 1em;
 }
-.todoWrapper{
+.todoWrapper {
   width: 100%;
   max-width: 35em;
   border-radius: 0.3em;
   padding: 0.8em;
   box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.3);
 }
-.title{
+.title {
   text-transform: capitalize;
   text-align: center;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin-bottom: 0.4em;
 }
-.error{
+.error {
   color: red;
   text-transform: capitalize;
   margin-bottom: 0.3em;
   font-weight: bold;
 }
-.form{
+.form {
   width: 100%;
   height: 3em;
   display: flex;
@@ -44,10 +44,14 @@
   gap: 0.3em;
   margin-bottom: 1.5em;
 }
-.todolist{
+.todolist {
   width: 100%;
 }
-.length{
+.todoHeight {
+  height: 15em;
+  overflow-y: scroll;
+}
+.length {
   width: 100%;
   text-transform: capitalize;
   color: red;
@@ -55,22 +59,27 @@
   text-align: center;
   font-weight: bold;
 }
-.blue{
+.blue {
   color: blue;
 }
 
-@media screen and (max-width:550px) {
-  .wrapper{
+@media screen and (max-width: 550px) {
+  .wrapper {
     padding: 0 1em;
   }
-  .heading, .title{
-font-size: 1.5rem;
-}
-.form{
-  height: 2.5em;
-  gap: 0;
-}
-.form button{
-  margin-left: 0.2em;
+  .heading,
+  .title {
+    font-size: 1.5rem;
+  }
+  .form {
+    height: 2.5em;
+    gap: 0;
+  }
+  .form button {
+    margin-left: 0.2em;
+  }
+  .todoHeight {
+  height: 12em;
+  overflow-y: scroll;
 }
 }
